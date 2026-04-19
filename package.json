@@ -1,0 +1,14 @@
+{
+  "name": "spec-skills",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Custom skills library for AI coding agents: architectural decision refinement, and more",
+  "repository": "https://github.com/helanmouse/spec-skills",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "claude-code",
+    "best-practices",
+    "workflows"
+  ]
+}
