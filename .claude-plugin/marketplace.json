@@ -4,13 +4,13 @@
     "name": "helanmouse"
   },
   "metadata": {
-    "description": "Custom skills library for AI coding agents"
+    "description": "Custom skills collection for AI coding agents"
   },
   "plugins": [
     {
-      "name": "spec-skills",
-      "source": "./",
-      "description": "Custom skills library for AI coding agents: architectural decision refinement and collaboration patterns",
+      "name": "ask-me",
+      "source": "./plugins/ask-me",
+      "description": "Refine design documents by asking only about architectural decisions; the AI decides everything else autonomously",
       "version": "1.0.0",
       "author": {
         "name": "helanmouse"
@@ -19,10 +19,9 @@
       "repository": "https://github.com/helanmouse/spec-skills",
       "license": "MIT",
       "keywords": [
-        "skills",
-        "collaboration",
+        "design",
         "architectural-decisions",
-        "workflows"
+        "collaboration"
       ]
     }
   ]

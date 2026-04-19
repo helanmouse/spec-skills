@@ -1,6 +1,6 @@
 {
-  "name": "spec-skills",
-  "description": "Custom skills library for AI coding agents: architectural decision refinement and collaboration patterns",
+  "name": "ask-me",
+  "description": "Refine design documents by asking only about architectural decisions; the AI decides everything else autonomously",
   "version": "1.0.0",
   "author": {
     "name": "helanmouse"
@@ -10,8 +10,8 @@
   "license": "MIT",
   "keywords": [
     "skills",
-    "collaboration",
+    "design",
     "architectural-decisions",
-    "workflows"
+    "collaboration"
   ]
 }

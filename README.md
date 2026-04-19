@@ -1,58 +1,65 @@
 # Spec Skills
 
-Custom skills library for AI coding agents, inspired by [superpowers](https://github.com/obra/superpowers). Provides composable "skills" that enforce disciplined software development workflows.
+Custom skills marketplace for AI coding agents, inspired by [superpowers](https://github.com/obra/superpowers). Each skill is an independent plugin — install only what you need.
 
-## Skills
+## Available Plugins
 
-| Skill | Description |
-|-------|-------------|
+| Plugin | Description |
+|--------|-------------|
 | **ask-me** | Refine design documents by asking only about architectural decisions; the AI decides everything else autonomously |
 
 ## Installation
-
-### Claude Code
-
-Add the marketplace first, then install the plugin:
 
 ```bash
 # Step 1: Add the marketplace
 /plugin marketplace add helanmouse/spec-skills
 
-# Step 2: Install the plugin
-/plugin install spec-skills@spec-skills
+# Step 2: Install a plugin
+/plugin install ask-me@spec-skills
 ```
 
 ### Local Testing
 
-Test locally before publishing:
-
 ```bash
 /plugin marketplace add ./path/to/spec-skills
-/plugin install spec-skills@spec-skills
+/plugin install ask-me@spec-skills
 ```
 
 ## Project Structure
 
 ```
 spec-skills/
-├── .claude-plugin/       # Claude Code plugin registration
-├── hooks/                # Session lifecycle hooks
-│   ├── hooks.json        # Hook configuration
-│   └── session-start.sh  # Auto-injects skill list on session start
-├── skills/               # Skills directory
-│   ├── ask-me/           # Architectural decision refinement
-│   │   └── SKILL.md
-│   └── ...               # Future skills go here
+├── .claude-plugin/
+│   └── marketplace.json        # Marketplace registry
+├── plugins/
+│   └── ask-me/                 # Independent plugin
+│       ├── .claude-plugin/
+│       │   └── plugin.json     # Plugin manifest
+│       └── skills/
+│           └── ask-me/
+│               └── SKILL.md
 ├── package.json
 └── README.md
 ```
 
-## Adding New Skills
+## Adding New Plugins
 
-1. Create a new directory under `skills/` with a kebab-case name
-2. Add a `SKILL.md` with frontmatter (`name`, `description`) and skill content
-3. Follow the pattern established by existing skills
-4. The session-start hook will auto-discover new skills
+1. Create a new directory under `plugins/` with a kebab-case name
+2. Add `.claude-plugin/plugin.json` with name, description, version
+3. Add `skills/<name>/SKILL.md` with frontmatter and skill content
+4. Register the new plugin in `.claude-plugin/marketplace.json`
+5. Commit and push — users can install immediately
+
+### Plugin Template
+
+```
+plugins/my-skill/
+├── .claude-plugin/
+│   └── plugin.json
+└── skills/
+    └── my-skill/
+        └── SKILL.md
+```
 
 ### SKILL.md Template
 
