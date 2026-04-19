@@ -12,18 +12,23 @@ Custom skills library for AI coding agents, inspired by [superpowers](https://gi
 
 ### Claude Code
 
-Install the plugin:
+Add the marketplace first, then install the plugin:
 
 ```bash
-/plugin install helanmouse/spec-skills
+# Step 1: Add the marketplace
+/plugin marketplace add helanmouse/spec-skills
+
+# Step 2: Install the plugin
+/plugin install spec-skills@spec-skills
 ```
 
-### Manual
+### Local Testing
 
-Clone this repository and reference the skills directory in your agent configuration:
+Test locally before publishing:
 
 ```bash
-git clone https://github.com/helanmouse/spec-skills.git
+/plugin marketplace add ./path/to/spec-skills
+/plugin install spec-skills@spec-skills
 ```
 
 ## Project Structure
