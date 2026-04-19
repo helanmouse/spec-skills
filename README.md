@@ -10,20 +10,53 @@ Custom skills marketplace for AI coding agents, inspired by [superpowers](https:
 
 ## Installation
 
+**Note:** Installation differs by platform. Claude Code has a built-in plugin marketplace. Codex and other agents require manual setup.
+
+### Claude Code
+
+In Claude Code, add the marketplace first, then install individual plugins:
+
 ```bash
-# Step 1: Add the marketplace
+# Add the marketplace
 /plugin marketplace add helanmouse/spec-skills
 
-# Step 2: Install a plugin
+# Install a plugin
 /plugin install ask-me@spec-skills
 ```
 
-### Local Testing
+To update:
 
 ```bash
-/plugin marketplace add ./path/to/spec-skills
-/plugin install ask-me@spec-skills
+/plugin marketplace update spec-skills
 ```
+
+### Codex
+
+Tell Codex:
+
+```
+Fetch and follow instructions from https://raw.githubusercontent.com/helanmouse/spec-skills/refs/heads/main/.codex/INSTALL.md
+```
+
+### Manual
+
+Clone this repository and reference the skills in your agent configuration:
+
+```bash
+git clone https://github.com/helanmouse/spec-skills.git
+```
+
+Then point your agent to the skill file:
+
+```markdown
+Read and follow the ask-me skill from https://raw.githubusercontent.com/helanmouse/spec-skills/refs/heads/main/plugins/ask-me/skills/ask-me/SKILL.md
+```
+
+Or copy the skill content directly into your project's instruction file (`AGENTS.md`, `CLAUDE.md`, etc.).
+
+### Verify Installation
+
+Start a new session and provide a design document. The agent should ask targeted architectural questions (module boundaries, thread model, lifecycle, failure recovery, interface contracts) rather than all possible questions.
 
 ## Project Structure
 
@@ -31,6 +64,8 @@ Custom skills marketplace for AI coding agents, inspired by [superpowers](https:
 spec-skills/
 ├── .claude-plugin/
 │   └── marketplace.json        # Marketplace registry
+├── .codex/
+│   └── INSTALL.md              # Codex setup instructions
 ├── plugins/
 │   └── ask-me/                 # Independent plugin
 │       ├── .claude-plugin/
