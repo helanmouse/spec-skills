@@ -10,23 +10,29 @@ Fetch and follow instructions from https://raw.githubusercontent.com/helanmouse/
 
 ## Setup
 
-1. Clone the repository:
+1. Clone the repository and copy skills to `~/.agents/skills/`:
 
 ```bash
-git clone https://github.com/helanmouse/spec-skills.git ~/.spec-skills
+git clone https://github.com/helanmouse/spec-skills.git /tmp/spec-skills
+mkdir -p ~/.agents/skills
+cp -r /tmp/spec-skills/plugins/*/skills/* ~/.agents/skills/
+rm -rf /tmp/spec-skills
 ```
 
-2. Create a Codex instructions file in your project (or add to an existing one). For each skill you want, add the skill content to your `AGENTS.md` or project instructions:
-
-```bash
-# Example: add ask-me skill to your project
-cat ~/.spec-skills/plugins/ask-me/skills/ask-me/SKILL.md >> AGENTS.md
-```
-
-3. Alternatively, reference the raw skill URL directly in your `AGENTS.md`:
+2. Add to your `AGENTS.md`:
 
 ```markdown
-Read and follow the ask-me skill from https://raw.githubusercontent.com/helanmouse/spec-skills/refs/heads/main/plugins/ask-me/skills/ask-me/SKILL.md
+Load and follow skills from ~/.agents/skills/ when relevant tasks arise. Each skill is a directory containing a SKILL.md with instructions.
+```
+
+## Update
+
+Re-run the setup commands to pull the latest versions:
+
+```bash
+git clone https://github.com/helanmouse/spec-skills.git /tmp/spec-skills
+cp -r /tmp/spec-skills/plugins/*/skills/* ~/.agents/skills/
+rm -rf /tmp/spec-skills
 ```
 
 ## Available Skills

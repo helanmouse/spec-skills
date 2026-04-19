@@ -40,19 +40,20 @@ Fetch and follow instructions from https://raw.githubusercontent.com/helanmouse/
 
 ### Manual
 
-Clone this repository and reference the skills in your agent configuration:
+Clone the repository and copy skills to `~/.agents/skills/`:
 
 ```bash
-git clone https://github.com/helanmouse/spec-skills.git
+git clone https://github.com/helanmouse/spec-skills.git /tmp/spec-skills
+mkdir -p ~/.agents/skills
+cp -r /tmp/spec-skills/plugins/*/skills/* ~/.agents/skills/
+rm -rf /tmp/spec-skills
 ```
 
-Then point your agent to the skill file:
+Then add to your agent's instruction file (`AGENTS.md`, `CLAUDE.md`, etc.):
 
 ```markdown
-Read and follow the ask-me skill from https://raw.githubusercontent.com/helanmouse/spec-skills/refs/heads/main/plugins/ask-me/skills/ask-me/SKILL.md
+Load and follow skills from ~/.agents/skills/ when relevant tasks arise. Each skill is a directory containing a SKILL.md with instructions.
 ```
-
-Or copy the skill content directly into your project's instruction file (`AGENTS.md`, `CLAUDE.md`, etc.).
 
 ### Verify Installation
 
