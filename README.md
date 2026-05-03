@@ -1,8 +1,8 @@
 # Spec Skills / Spec 技能库
 
-Custom skills marketplace for AI coding agents, inspired by [superpowers](https://github.com/obra/superpowers). Each skill is an independent plugin — install only what you need.
+While using [superpowers](https://github.com/obra/superpowers), we found that its spec skills often miss the user's true intent. This is a collection of skills designed to complement superpowers — making AI coding agents better at understanding what you actually mean. Each skill is an independent plugin; install only what you need.
 
-面向 AI 编程代理的自定义技能市场，灵感来源于 [superpowers](https://github.com/obra/superpowers)。每个技能都是一个独立的插件——按需安装即可。
+在使用 [superpowers](https://github.com/obra/superpowers) 的过程中，我们发现其 spec 技能常常不能准确理解用户的真实意图。这里的一系列技能专为补充 superpowers 而设计——让 AI 编程代理更懂你的真正需求。每个技能都是独立插件，按需安装即可。
 
 ## Available Plugins / 可用插件
 
