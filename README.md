@@ -73,51 +73,6 @@ Start a new session and provide a design document. The agent should ask targeted
 
 开启一个新会话并提供一份设计文档。代理应针对架构问题（模块边界、线程模型、生命周期、故障恢复、接口契约）进行精准提问，而非事无巨细地提问。
 
-## Adding New Plugins / 添加新插件
-
-1. Create a new directory under `plugins/` with a kebab-case name / 在 `plugins/` 下创建一个 kebab-case 命名的新目录
-2. Add `.claude-plugin/plugin.json` with name, description, version / 添加包含 name、description、version 的 `.claude-plugin/plugin.json`
-3. Add `skills/<name>/SKILL.md` with frontmatter and skill content / 添加包含 frontmatter 和技能内容的 `skills/<name>/SKILL.md`
-4. Register the new plugin in `.claude-plugin/marketplace.json` / 在 `.claude-plugin/marketplace.json` 中注册新插件
-5. Commit and push — users can install immediately / 提交并推送——用户即可立即安装
-
-### Plugin Template / 插件模板
-
-```
-plugins/my-skill/
-├── .claude-plugin/
-│   └── plugin.json
-└── skills/
-    └── my-skill/
-        └── SKILL.md
-```
-
-### SKILL.md Template / SKILL.md 模板
-
-```markdown
----
-name: skill-name
-description: Use when [specific triggering condition] / 当 [特定触发条件] 时使用
----
-
-# Skill Name / 技能名称
-
-## Overview / 概述
-One or two sentences describing the skill's core principle.
-用一两句话描述该技能的核心原则。
-
-## When to Use / 使用时机
-- Specific triggering conditions / 特定的触发条件
-
-## Core Pattern / 核心模式
-Step-by-step process flow.
-分步骤的流程说明。
-
-## Completion Criteria / 完成标准
-When the skill's work is done.
-技能工作何时算完成。
-```
-
 ## License / 许可证
 
 MIT
